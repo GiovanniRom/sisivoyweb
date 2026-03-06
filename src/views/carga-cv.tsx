@@ -47,7 +47,11 @@ const OPCIONES_AREA = [
   { label: "Contabilidad", value: "contabilidad" },
 ];
 
-const CargaCV = () => {
+type CargaCVProps = {
+  onCerrarModalEnviado?: () => void;
+};
+
+const CargaCV = ({ onCerrarModalEnviado }: CargaCVProps) => {
   const [aceptoTerminos, setAceptoTerminos] = useState(false);
   const [areasPreferencia, setAreasPreferencia] = useState<string[]>([]);
   const [disponibilidadViajar, setDisponibilidadViajar] = useState<
@@ -427,7 +431,10 @@ const CargaCV = () => {
       </section>
       <Modal
         open={modalEnviadoOpen}
-        onCancel={() => setModalEnviadoOpen(false)}
+        onCancel={() => {
+          setModalEnviadoOpen(false);
+          onCerrarModalEnviado?.();
+        }}
         footer={null}
         centered
         width={550}

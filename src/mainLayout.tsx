@@ -54,7 +54,9 @@ const MainLayout = () => {
           />
         );
       case "contacto":
-        return <Contacto />;
+        return (
+          <Contacto onCerrarModalEnviado={() => goTo("inicio")} />
+        );
       case "aviso-privacidad":
         return <AvisoPrivacidad />;
       case "descripcion-trabajo":
@@ -62,7 +64,9 @@ const MainLayout = () => {
           <DescripcionTrabajo onIrACargaCV={() => goTo("carga-cv")} />
         );
       case "carga-cv":
-        return <CargaCV />;
+        return (
+          <CargaCV onCerrarModalEnviado={() => goTo("bolsa-trabajo")} />
+        );
       default:
         return null;
     }
