@@ -62,6 +62,7 @@
 .main-nav-vertical .nav-link {
   color: #ffffff !important;
   font-weight: 500;
+  font-size: 1.25rem;
   text-decoration: none;
   padding: 0.25rem 0;
 }
@@ -417,7 +418,7 @@
 }
 
 .nav-drawer .main-nav-vertical .nav-link {
-  font-size: 1.1rem;
+  font-size: 1.4rem;
   font-weight: 700;
 }
 
@@ -629,4 +630,30 @@
 
 .vista-bolsa-trabajo .vista-bolsa-trabajo-vacante-opaca {
   opacity: 0.6;
+}
+
+/* Vista Carga CV: botón Enviar color #d4238b */
+.vista-carga-cv .ant-btn-primary {
+  background-color: #d4238b !important;
+  border-color: #d4238b !important;
+}
+.vista-carga-cv .ant-btn-primary:hover {
+  background-color: #b91e76 !important;
+  border-color: #b91e76 !important;
+}
+
+/* Vista Carga CV: casillas y radios seleccionados en #d4238b */
+.vista-carga-cv .ant-checkbox-checked .ant-checkbox-inner,
+.vista-carga-cv .ant-checkbox-wrapper:hover .ant-checkbox-inner {
+  background-color: #d4238b !important;
+  border-color: #d4238b !important;
+}
+.vista-carga-cv .ant-radio-checked .ant-radio-inner {
+  border-color: #d4238b !important;
+}
+.vista-carga-cv .ant-radio-checked .ant-radio-inner::after {
+  background-color: #d4238b !important;
+}
+.vista-carga-cv .ant-radio-wrapper:hover .ant-radio-inner {
+  border-color: #d4238b !important;
 }

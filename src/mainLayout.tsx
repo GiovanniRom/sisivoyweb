@@ -58,7 +58,9 @@ const MainLayout = () => {
       case "aviso-privacidad":
         return <AvisoPrivacidad />;
       case "descripcion-trabajo":
-        return <DescripcionTrabajo />;
+        return (
+          <DescripcionTrabajo onIrACargaCV={() => goTo("carga-cv")} />
+        );
       case "carga-cv":
         return <CargaCV />;
       default:
