@@ -1,5 +1,12 @@
 import { useState } from "react";
-import { Layout, Grid, Button, Drawer } from "antd";
+import { Layout, Grid, Drawer } from "antd";
+import logoImg from "./assets/images/logo.png";
+import faceIcon from "./assets/images/footer/faceicon.png";
+import instaIcon from "./assets/images/footer/instaicon.png";
+import tiktokIcon from "./assets/images/footer/tiktokicon.png";
+import xIcon from "./assets/images/footer/xicon.png";
+import lkIcon from "./assets/images/footer/lkicon.png";
+import waIcon from "./assets/images/footer/waicon.png";
 import Inicio from "./views/inicio";
 import QuienesSomos from "./views/quienes-somos";
 import BolsaTrabajo from "./views/bolsa-trabajo";
@@ -74,26 +81,35 @@ const MainLayout = () => {
       <Header className="main-header">
         <div className="header-inner">
           <div className="logo-area">
-            <span className="logo-placeholder">LOGO</span>
+            <img src={logoImg} alt="SISI VOY" className="header-logo" />
           </div>
           {isMobile ? (
             <>
-              <Button
-                type="text"
+              <button
+                type="button"
                 onClick={() => setDrawerOpen(true)}
-                className="menu-btn-mobile"
+                className="hamburger-btn"
                 aria-label="Abrir menú"
               >
-                Menú
-              </Button>
+                <span className="hamburger-line" />
+                <span className="hamburger-line" />
+                <span className="hamburger-line" />
+              </button>
               <Drawer
-                title="Menú"
-                placement="right"
+                title={null}
+                placement="left"
                 open={drawerOpen}
                 onClose={() => setDrawerOpen(false)}
                 className="nav-drawer"
-                styles={{ body: { padding: "1rem" } }}
+                styles={{
+                  body: { padding: "1rem", backgroundColor: "#d4238b" },
+                  header: { backgroundColor: "#d4238b", borderBottom: "none" },
+                  wrapper: { backgroundColor: "#d4238b" },
+                }}
               >
+                <div className="drawer-logo-wrap">
+                  <img src={logoImg} alt="SISI VOY" className="drawer-logo" />
+                </div>
                 <nav className="main-nav main-nav-vertical">
                   {navItems.map(({ key, label }) => (
                     <a
@@ -120,20 +136,73 @@ const MainLayout = () => {
       <Content className="main-content">{renderVista()}</Content>
 
       <Footer className="main-footer">
-        <a
-          href="#aviso-privacidad"
-          onClick={(e) => {
-            e.preventDefault();
-            setVistaActiva("aviso-privacidad");
-          }}
-          className="footer-link"
-        >
-          Aviso de privacidad
-        </a>
+        <div className="footer-icons">
+          <a
+            href="https://www.facebook.com/sisivoymx/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="footer-icon-link"
+            aria-label="SISI VOY en Facebook"
+          >
+            <img src={faceIcon} alt="Facebook" className="footer-icon" />
+          </a>
+          <a
+            href="https://www.instagram.com/sisivoymx?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw%3D%3D"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="footer-icon-link"
+            aria-label="SISI VOY en Instagram"
+          >
+            <img src={instaIcon} alt="Instagram" className="footer-icon" />
+          </a>
+          <a
+            href="https://www.tiktok.com/@sisivoymx?is_from_webapp=1&sender_device=pc"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="footer-icon-link"
+            aria-label="SISI VOY en TikTok"
+          >
+            <img src={tiktokIcon} alt="TikTok" className="footer-icon" />
+          </a>
+          <a
+            href="https://x.com/SISIVOY?s=20"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="footer-icon-link"
+            aria-label="SISI VOY en X"
+          >
+            <img src={xIcon} alt="X" className="footer-icon" />
+          </a>
+          <img src={lkIcon} alt="LinkedIn" className="footer-icon" />
+          <a
+            href="https://api.whatsapp.com/send/?phone=525562130883&text&type=phone_number&app_absent=0"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="footer-icon-link"
+            aria-label="Contactar por WhatsApp"
+          >
+            <img src={waIcon} alt="WhatsApp" className="footer-icon" />
+          </a>
+        </div>
+        <div className="footer-right">
+          <a
+            href="#aviso-privacidad"
+            onClick={(e) => {
+              e.preventDefault();
+              setVistaActiva("aviso-privacidad");
+            }}
+            className="footer-link"
+          >
+            Aviso de privacidad
+          </a>
+          <span className="footer-info">
+            | info@sisivoy.com | © 2026 Todos los derechos reservados por
+            SISIVOY
+          </span>
+        </div>
       </Footer>
     </Layout>
   );
 };
 
 export default MainLayout;
-
