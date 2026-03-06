@@ -385,6 +385,7 @@ const CargaCV = ({ onCerrarModalEnviado }: CargaCVProps) => {
                 </Checkbox>
               </div>
               <div
+                className="vista-carga-cv-boton-enviar-wrap"
                 style={{
                   display: "flex",
                   justifyContent: "flex-end",
@@ -405,7 +406,7 @@ const CargaCV = ({ onCerrarModalEnviado }: CargaCVProps) => {
               </div>
             </form>
           </Col>
-          <Col xs={24} md={12}>
+          <Col xs={24} md={12} className="vista-carga-cv-col-imagen">
             <div
               style={{
                 width: "100%",

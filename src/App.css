@@ -673,8 +673,20 @@
 
 /* Vista Carga CV: botón Enviar color #d4238b */
 @media (max-width: 767px) {
+  .vista-contacto .vista-contacto-col-medios {
+    display: none !important;
+  }
+}
+
+@media (max-width: 767px) {
   .vista-carga-cv h1 {
     font-size: 1.15rem !important;
+  }
+  .vista-carga-cv .vista-carga-cv-col-imagen {
+    display: none !important;
+  }
+  .vista-carga-cv .vista-carga-cv-boton-enviar-wrap {
+    justify-content: center;
   }
 }
 

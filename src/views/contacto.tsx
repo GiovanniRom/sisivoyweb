@@ -180,7 +180,7 @@ const Contacto = ({ onCerrarModalEnviado }: ContactoProps) => {
               </div>
             </form>
           </Col>
-          <Col xs={24} md={12}>
+          <Col xs={24} md={12} className="vista-contacto-col-medios">
             <div
               style={{
                 display: "flex",
