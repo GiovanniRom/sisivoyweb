@@ -1,7 +1,17 @@
 import { useState, useRef, useEffect } from "react";
-import { Row, Col, Input, Checkbox, Button, Radio, ConfigProvider } from "antd";
+import {
+  Row,
+  Col,
+  Input,
+  Checkbox,
+  Button,
+  Radio,
+  ConfigProvider,
+  Modal,
+} from "antd";
 import comunidadImg from "../assets/images/trabajo/comunidad.png";
 import estrellaImg from "../assets/images/inicio/estrella.png";
+import avionSvg from "../assets/images/trabajo/avion.svg";
 
 const estiloTrigger = {
   width: "100%",
@@ -50,6 +60,7 @@ const CargaCV = () => {
   const refArea = useRef<HTMLDivElement>(null);
   const refDisponibilidad = useRef<HTMLDivElement>(null);
   const refSituacion = useRef<HTMLDivElement>(null);
+  const [modalEnviadoOpen, setModalEnviadoOpen] = useState(false);
 
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
@@ -70,7 +81,7 @@ const CargaCV = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // Aquí se puede enviar el formulario
+    setModalEnviadoOpen(true);
   };
 
   const themeVistaCV = {
@@ -414,6 +425,63 @@ const CargaCV = () => {
           </Col>
         </Row>
       </section>
+      <Modal
+        open={modalEnviadoOpen}
+        onCancel={() => setModalEnviadoOpen(false)}
+        footer={null}
+        centered
+        width={550}
+      >
+        <div style={{ textAlign: "center", padding: "8px 0", width: "100%" }}>
+          <div style={{ marginBottom: "20px" }}>
+            <img
+              src={avionSvg}
+              alt=""
+              style={{ width: 80, height: 80, objectFit: "contain" }}
+            />
+          </div>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: "8px",
+              marginBottom: "16px",
+              flexWrap: "nowrap",
+            }}
+          >
+            <img
+              src={estrellaImg}
+              alt=""
+              style={{ width: 28, height: 28, objectFit: "contain", flexShrink: 0 }}
+            />
+            <h3
+              style={{
+                margin: 0,
+                color: "#d4238b",
+                fontSize: "clamp(0.95rem, 4vw, 1.25rem)",
+                fontWeight: 600,
+                lineHeight: 1.3,
+                flex: "1 1 auto",
+                minWidth: 0,
+                textAlign: "center",
+              }}
+            >
+              ¡Tus datos han sido enviados correctamente!
+            </h3>
+            <img
+              src={estrellaImg}
+              alt=""
+              style={{ width: 28, height: 28, objectFit: "contain", flexShrink: 0 }}
+            />
+          </div>
+          <p style={{ margin: 0, color: "#333", fontSize: "1rem" }}>
+            Uno de nuestros asesores de Recursos Humanos se pondrá en contacto
+            contigo en caso de alinearse tu perfil con la vacante o departamento
+            seleccionado
+          </p>
+        </div>
+      </Modal>
     </ConfigProvider>
   );
 };
