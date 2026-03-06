@@ -86,7 +86,7 @@ const BolsaTrabajo = ({
                 type="button"
                 style={{
                   position: "absolute",
-                  bottom: -20,
+                  bottom: -30,
                   right: 0,
                   backgroundColor: "#FFB800",
                   color: "#d4238b",
@@ -125,7 +125,7 @@ const BolsaTrabajo = ({
               <div
                 style={{
                   position: "absolute",
-                  bottom: -20,
+                  bottom: -30,
                   right: 0,
                   backgroundColor: "#FFB800",
                   color: "#d4238b",
@@ -161,7 +161,7 @@ const BolsaTrabajo = ({
               <div
                 style={{
                   position: "absolute",
-                  bottom: -20,
+                  bottom: -30,
                   right: 0,
                   backgroundColor: "#FFB800",
                   color: "#d4238b",

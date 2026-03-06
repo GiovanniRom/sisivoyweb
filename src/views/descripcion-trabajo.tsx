@@ -14,13 +14,13 @@ const DescripcionTrabajo = ({ onIrACargaCV }: DescripcionTrabajoProps) => {
       style={{
         backgroundColor: "#ffffff",
         minHeight: "100vh",
-        padding: "80px 80px",
+        padding: "40px 20px",
         minWidth: "100%",
         paddingBottom: "120px",
       }}
     >
       <Row gutter={[32, 32]}>
-        <Col xs={24} md={12}>
+        <Col xs={24} md={12} style={{ marginBottom: "50px" }}>
           <div
             style={{
               display: "flex",
@@ -128,7 +128,7 @@ const DescripcionTrabajo = ({ onIrACargaCV }: DescripcionTrabajoProps) => {
         </Col>
         <Col
           xs={24}
-          md={12}
+          md={10}
           style={{
             display: "flex",
             flexDirection: "column",
@@ -136,6 +136,7 @@ const DescripcionTrabajo = ({ onIrACargaCV }: DescripcionTrabajoProps) => {
           }}
         >
           <div
+            className="vista-descripcion-trabajo-ofrecemos"
             style={{
               position: "relative",
               marginBottom: "20px",
@@ -148,6 +149,7 @@ const DescripcionTrabajo = ({ onIrACargaCV }: DescripcionTrabajoProps) => {
             <img
               src={personaImg}
               alt=""
+              className="vista-descripcion-trabajo-persona"
               style={{
                 position: "absolute",
                 top: -25,

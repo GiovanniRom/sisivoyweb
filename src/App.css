@@ -632,6 +632,38 @@
   opacity: 0.6;
 }
 
+@media (max-width: 767px) {
+  .vista-bolsa-trabajo h1 {
+    font-size: 1.15rem !important;
+  }
+  .vista-bolsa-trabajo .vista-bolsa-trabajo-vacante {
+    font-size: 1rem;
+  }
+  .vista-bolsa-trabajo .vista-bolsa-trabajo-vacante p {
+    font-size: 1rem !important;
+  }
+  .vista-bolsa-trabajo .vista-bolsa-trabajo-vacante > button,
+  .vista-bolsa-trabajo .vista-bolsa-trabajo-vacante > div:last-child {
+    font-size: 1rem !important;
+    padding: 10px 16px !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .vista-descripcion-trabajo h1 {
+    font-size: 1.15rem !important;
+  }
+  .vista-descripcion-trabajo .vista-descripcion-trabajo-persona {
+    left: 50% !important;
+    right: auto !important;
+    top: -85px !important;
+    transform: translateX(-50%);
+  }
+  .vista-descripcion-trabajo .vista-descripcion-trabajo-ofrecemos {
+    padding-top: 90px;
+  }
+}
+
 /* Vista Carga CV: botón Enviar color #d4238b */
 .vista-carga-cv .ant-btn-primary {
   background-color: #d4238b !important;
