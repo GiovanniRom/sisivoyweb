@@ -8,6 +8,7 @@ const AvisoPrivacidad = () => {
         minHeight: "100vh",
         minWidth: "100%",
         padding: "20px",
+        paddingBottom: "120px",
       }}
     >
       <Row gutter={[16, 16]} justify="center">

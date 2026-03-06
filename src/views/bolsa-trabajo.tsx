@@ -24,8 +24,9 @@ const BolsaTrabajo = ({
         backgroundColor: "#ffffff",
         minHeight: "100vh",
         width: "100%",
-        padding: "80px 40px",
+        padding: "40px 40px",
         minWidth: "100%",
+        paddingBottom: "120px",
       }}
     >
       <Row gutter={[32, 32]} align="middle">

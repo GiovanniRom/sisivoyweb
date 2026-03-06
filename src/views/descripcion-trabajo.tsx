@@ -16,6 +16,7 @@ const DescripcionTrabajo = ({ onIrACargaCV }: DescripcionTrabajoProps) => {
         minHeight: "100vh",
         padding: "80px 80px",
         minWidth: "100%",
+        paddingBottom: "120px",
       }}
     >
       <Row gutter={[32, 32]}>

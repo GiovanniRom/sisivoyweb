@@ -32,6 +32,7 @@ const Contacto = ({ onCerrarModalEnviado }: ContactoProps) => {
           minHeight: "100vh",
           padding: "40px 50px",
           minWidth: "100%",
+          paddingBottom: "120px",
         }}
       >
         <Row gutter={[32, 32]} align="top">
@@ -345,7 +346,12 @@ const Contacto = ({ onCerrarModalEnviado }: ContactoProps) => {
             <img
               src={estrellaImg}
               alt=""
-              style={{ width: 28, height: 28, objectFit: "contain", flexShrink: 0 }}
+              style={{
+                width: 28,
+                height: 28,
+                objectFit: "contain",
+                flexShrink: 0,
+              }}
             />
             <h3
               style={{
@@ -364,7 +370,12 @@ const Contacto = ({ onCerrarModalEnviado }: ContactoProps) => {
             <img
               src={estrellaImg}
               alt=""
-              style={{ width: 28, height: 28, objectFit: "contain", flexShrink: 0 }}
+              style={{
+                width: 28,
+                height: 28,
+                objectFit: "contain",
+                flexShrink: 0,
+              }}
             />
           </div>
           <p style={{ margin: 0, color: "#333", fontSize: "1rem" }}>

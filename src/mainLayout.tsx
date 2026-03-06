@@ -100,7 +100,21 @@ const MainLayout = () => {
       <Header className="main-header">
         <div className="header-inner">
           <div className="logo-area">
-            <img src={logoImg} alt="SISI VOY" className="header-logo" />
+            <button
+              type="button"
+              onClick={() => goTo("inicio")}
+              style={{
+                background: "none",
+                border: "none",
+                padding: 0,
+                cursor: "pointer",
+                display: "block",
+                lineHeight: 0,
+              }}
+              aria-label="Ir a Inicio"
+            >
+              <img src={logoImg} alt="SISI VOY" className="header-logo" />
+            </button>
           </div>
           {isMobile ? (
             <>
@@ -127,7 +141,21 @@ const MainLayout = () => {
                 }}
               >
                 <div className="drawer-logo-wrap">
-                  <img src={logoImg} alt="SISI VOY" className="drawer-logo" />
+                  <button
+                    type="button"
+                    onClick={() => goTo("inicio")}
+                    style={{
+                      background: "none",
+                      border: "none",
+                      padding: 0,
+                      cursor: "pointer",
+                      display: "block",
+                      lineHeight: 0,
+                    }}
+                    aria-label="Ir a Inicio"
+                  >
+                    <img src={logoImg} alt="SISI VOY" className="drawer-logo" />
+                  </button>
                 </div>
                 <nav className="main-nav main-nav-vertical">
                   {navItems.map(({ key, label }) => (
