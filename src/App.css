@@ -529,8 +529,8 @@
 }
 
 .modal-novedades-icon {
-  width: 56px;
-  height: 56px;
+  width: 100px;
+  height: 70px;
   object-fit: contain;
   display: block;
 }
@@ -606,4 +606,27 @@
   outline: none;
   border-color: #d4238b;
   box-shadow: 0 0 0 2px rgba(212, 35, 139, 0.2);
+}
+
+/* Vista Bolsa de trabajo: Inter y texto más grande */
+.vista-bolsa-trabajo {
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+}
+
+.vista-bolsa-trabajo h1 {
+  font-size: 1.75rem;
+}
+
+.vista-bolsa-trabajo p {
+  font-size: 1.15rem;
+  line-height: 1.6;
+}
+
+.vista-bolsa-trabajo .vista-bolsa-trabajo-vacante {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.vista-bolsa-trabajo .vista-bolsa-trabajo-vacante-opaca {
+  opacity: 0.6;
 }

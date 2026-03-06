@@ -12,6 +12,8 @@ import QuienesSomos from "./views/quienes-somos";
 import BolsaTrabajo from "./views/bolsa-trabajo";
 import Contacto from "./views/contacto";
 import AvisoPrivacidad from "./views/aviso-privacidad";
+import DescripcionTrabajo from "./views/descripcion-trabajo";
+import CargaCV from "./views/carga-cv";
 
 const { Header, Content, Footer } = Layout;
 const { useBreakpoint } = Grid;
@@ -21,7 +23,9 @@ type Vista =
   | "quienes-somos"
   | "bolsa-trabajo"
   | "contacto"
-  | "aviso-privacidad";
+  | "aviso-privacidad"
+  | "descripcion-trabajo"
+  | "carga-cv";
 
 const navItems: { key: Vista; label: string }[] = [
   { key: "inicio", label: "Inicio" },
@@ -43,11 +47,20 @@ const MainLayout = () => {
       case "quienes-somos":
         return <QuienesSomos />;
       case "bolsa-trabajo":
-        return <BolsaTrabajo />;
+        return (
+          <BolsaTrabajo
+            onIrADescripcionTrabajo={() => goTo("descripcion-trabajo")}
+            onIrACargaCV={() => goTo("carga-cv")}
+          />
+        );
       case "contacto":
         return <Contacto />;
       case "aviso-privacidad":
         return <AvisoPrivacidad />;
+      case "descripcion-trabajo":
+        return <DescripcionTrabajo />;
+      case "carga-cv":
+        return <CargaCV />;
       default:
         return null;
     }
