@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Row, Col, Input, Button, ConfigProvider, Modal } from "antd";
+import { useState, useRef, useEffect } from "react";
+import { Row, Col, Input, Button, ConfigProvider, Modal, Checkbox } from "antd";
 import waSvg from "../assets/images/contacto/wa.svg";
 import mailSvg from "../assets/images/contacto/mail.svg";
 import estrellaImg from "../assets/images/inicio/estrella.png";
@@ -7,12 +7,57 @@ import avionSvg from "../assets/images/trabajo/avion.svg";
 
 const { TextArea } = Input;
 
+const estiloTriggerContacto = {
+  width: "100%",
+  padding: "8px 11px",
+  fontSize: 14,
+  border: "1px solid #d9d9d9",
+  borderRadius: 6,
+  cursor: "pointer",
+  backgroundColor: "#fff",
+  minHeight: 40,
+  lineHeight: "22px",
+  textAlign: "left" as const,
+} as const;
+
+const estiloPanelContacto = {
+  marginTop: 4,
+  padding: "12px",
+  border: "1px solid #d9d9d9",
+  borderRadius: 6,
+  backgroundColor: "#fff",
+  boxShadow: "0 6px 16px rgba(0,0,0,0.08)",
+  display: "flex",
+  flexDirection: "column" as const,
+  gap: 8,
+};
+
+const OPCIONES_MOTIVO = [
+  { label: "Registrar un negocio", value: "registrar_negocio" },
+  { label: "Reportar un incidente", value: "reportar_incidente" },
+  { label: "Alianza comercial", value: "alianza_comercial" },
+  { label: "Otro", value: "otro" },
+];
+
 type ContactoProps = {
   onCerrarModalEnviado?: () => void;
 };
 
 const Contacto = ({ onCerrarModalEnviado }: ContactoProps) => {
   const [modalEnviadoOpen, setModalEnviadoOpen] = useState(false);
+  const [motivoContacto, setMotivoContacto] = useState<string[]>([]);
+  const [openMotivo, setOpenMotivo] = useState(false);
+  const refMotivo = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      const target = e.target as Node;
+      if (refMotivo.current && !refMotivo.current.contains(target))
+        setOpenMotivo(false);
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -127,23 +172,45 @@ const Contacto = ({ onCerrarModalEnviado }: ContactoProps) => {
                   style={{ width: "100%" }}
                 />
               </div>
-              <div style={{ marginBottom: "16px" }}>
-                <label
-                  htmlFor="contacto-motivo"
+              <div style={{ marginBottom: "16px" }} ref={refMotivo}>
+                <span
                   style={{
                     display: "block",
-                    marginBottom: "6px",
+                    marginBottom: "8px",
                     fontWeight: 500,
                   }}
                 >
                   Motivo de contacto
-                </label>
-                <Input
-                  id="contacto-motivo"
-                  placeholder="Ej. Consulta, soporte, información"
-                  size="large"
-                  style={{ width: "100%" }}
-                />
+                </span>
+                <button
+                  type="button"
+                  style={estiloTriggerContacto}
+                  onClick={() => setOpenMotivo((v) => !v)}
+                >
+                  {motivoContacto.length
+                    ? motivoContacto
+                        .map(
+                          (v) =>
+                            OPCIONES_MOTIVO.find((o) => o.value === v)?.label ??
+                            v,
+                        )
+                        .join(", ")
+                    : "Seleccionar motivo(s)..."}
+                </button>
+                {openMotivo && (
+                  <div style={estiloPanelContacto}>
+                    <Checkbox.Group
+                      options={OPCIONES_MOTIVO}
+                      value={motivoContacto}
+                      onChange={(values) => setMotivoContacto(values)}
+                      style={{
+                        display: "flex",
+                        flexDirection: "column",
+                        gap: "8px",
+                      }}
+                    />
+                  </div>
+                )}
               </div>
               <div style={{ marginBottom: "24px" }}>
                 <label

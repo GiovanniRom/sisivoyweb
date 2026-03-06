@@ -171,6 +171,22 @@
   display: block;
 }
 
+/* Vista Inicio móvil: orden título → stores → imagen, espacio ante el footer */
+@media (max-width: 767px) {
+  .vista-inicio-inner {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 2rem;
+  }
+  .vista-inicio-inner > .ant-col:first-child {
+    order: 2;
+    margin-bottom: 2rem;
+  }
+  .vista-inicio-inner > .ant-col:last-child {
+    order: 1;
+  }
+}
+
 /* Vista Inicio escritorio: imagen más grande y pegada al bottom */
 @media (min-width: 768px) {
   .main-content .vista-inicio-estatica {
@@ -445,8 +461,21 @@
     background-position: center bottom;
   }
 
+  .vista-inicio-texto-inner {
+    max-width: 100%;
+  }
   .vista-inicio-titulo {
-    font-size: 2.25rem;
+    font-size: 1.5rem;
+    line-height: 0.5;
+    minWidth: 100%;
+  }
+  .vista-inicio-stores {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .vista-inicio-store-link {
+    max-width: 250px;
+    margin: 0 auto;
   }
 
   .app-layout .main-footer {
