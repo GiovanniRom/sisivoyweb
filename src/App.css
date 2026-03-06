@@ -660,11 +660,24 @@
     transform: translateX(-50%);
   }
   .vista-descripcion-trabajo .vista-descripcion-trabajo-ofrecemos {
-    padding-top: 90px;
+    padding-top: 120px;
+  }
+  .vista-descripcion-trabajo .vista-descripcion-trabajo-ofrecemos-titulo {
+    margin-top: 50px;
+  }
+  .vista-descripcion-trabajo h1 img {
+    width: 16px !important;
+    height: 16px !important;
   }
 }
 
 /* Vista Carga CV: botón Enviar color #d4238b */
+@media (max-width: 767px) {
+  .vista-carga-cv h1 {
+    font-size: 1.15rem !important;
+  }
+}
+
 .vista-carga-cv .ant-btn-primary {
   background-color: #d4238b !important;
   border-color: #d4238b !important;

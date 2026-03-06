@@ -159,6 +159,7 @@ const DescripcionTrabajo = ({ onIrACargaCV }: DescripcionTrabajoProps) => {
               }}
             />
             <h1
+              className="vista-descripcion-trabajo-ofrecemos-titulo"
               style={{
                 color: "#d4238b",
                 fontSize: "1.8rem",
