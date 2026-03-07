@@ -294,7 +294,6 @@ const QuienesSomos = () => {
               borderRadius: "0 0 16px 16px",
               overflow: "hidden",
               paddingTop: 16,
-              paddingBottom: 16,
               ...(isMobile
                 ? {
                     overflowX: "auto",
@@ -411,7 +410,6 @@ const QuienesSomos = () => {
               borderRadius: "0 0 16px 16px",
               overflow: "hidden",
               paddingTop: 16,
-              paddingBottom: 16,
               ...(isMobile
                 ? {
                     overflowX: "auto",
