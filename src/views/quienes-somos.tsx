@@ -293,12 +293,14 @@ const QuienesSomos = () => {
               alignItems: "stretch",
               borderRadius: "0 0 16px 16px",
               overflow: "hidden",
+              paddingTop: 16,
+              paddingBottom: 16,
               ...(isMobile
                 ? {
                     overflowX: "auto",
                     flexWrap: "nowrap",
                     scrollSnapType: "x mandatory",
-                    paddingBottom: 8,
+                    paddingBottom: 16,
                     marginLeft: -20,
                     marginRight: -20,
                     paddingLeft: 20,
@@ -408,12 +410,14 @@ const QuienesSomos = () => {
               alignItems: "stretch",
               borderRadius: "0 0 16px 16px",
               overflow: "hidden",
+              paddingTop: 16,
+              paddingBottom: 16,
               ...(isMobile
                 ? {
                     overflowX: "auto",
                     flexWrap: "nowrap",
                     scrollSnapType: "x mandatory",
-                    paddingBottom: 8,
+                    paddingBottom: 16,
                     marginLeft: -20,
                     marginRight: -20,
                     paddingLeft: 20,
