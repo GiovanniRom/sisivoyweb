@@ -171,19 +171,26 @@
   display: block;
 }
 
-/* Vista Inicio móvil: orden título → stores → imagen, espacio ante el footer */
+/* Vista Inicio móvil: orden título → stores → imagen, imagen detrás del footer */
 @media (max-width: 767px) {
   .vista-inicio-inner {
     display: flex;
     flex-direction: column;
     padding-bottom: 2rem;
+    position: relative;
+    z-index: 0;
   }
   .vista-inicio-inner > .ant-col:first-child {
     order: 2;
     margin-bottom: 2rem;
+    position: relative;
+    z-index: 0;
   }
   .vista-inicio-inner > .ant-col:last-child {
     order: 1;
+  }
+  .app-layout .main-footer {
+    z-index: 10;
   }
 }
 
