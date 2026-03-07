@@ -26,7 +26,7 @@ const Inicio = () => {
   const handleClose = () => setModalVisible(false);
 
   return (
-    <section className="vista-inicio vista-inicio-estatica">
+    <section className="vista-inicio">
       <div
         className="vista-inicio-bg"
         style={{ backgroundImage: `url(${groupImg})` }}

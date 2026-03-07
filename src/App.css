@@ -110,7 +110,7 @@
   margin: 0 auto;
 }
 
-/* Vista Inicio: estática (sin scroll), imagen de fondo con fade-in */
+/* Vista Inicio: flex responsivo, imagen de fondo con fade-in */
 .main-content .vista-inicio {
   position: relative;
   max-width: none;
@@ -120,6 +120,11 @@
   padding: 2rem 1.5rem;
   background-color: #d4238b;
   box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 72px - 64px);
+  flex-wrap: wrap;
 }
 
 .vista-inicio-bg {
@@ -147,15 +152,6 @@
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
-}
-
-.main-content .vista-inicio-estatica {
-  height: calc(100vh - 72px - 64px);
-  min-height: calc(100vh - 72px - 64px);
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .vista-inicio-imagen {
@@ -196,7 +192,7 @@
 
 /* Vista Inicio escritorio: imagen más grande y pegada al bottom */
 @media (min-width: 768px) {
-  .main-content .vista-inicio-estatica {
+  .main-content .vista-inicio {
     align-items: stretch;
   }
 
